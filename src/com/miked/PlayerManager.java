@@ -37,4 +37,9 @@ public class PlayerManager {
         return players;
     }
 
+    public Player findWinner() {
+
+        //todo you have a list of players, you can get the cardPlayedThisRound variable, so you can figure out who won.
+        return null; //replace with return statement to return the winner
+    }
 }
