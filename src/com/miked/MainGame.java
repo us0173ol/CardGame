@@ -23,6 +23,8 @@ public class MainGame {
         HumanPlayer me = new HumanPlayer("Me");
         HumanPlayer you = new HumanPlayer("You");
 
+        //todo PlayerManager deals with Players. So you could add a ComputerPlayer object instead of, or as well as, the human players.
+
         playerManager.add(me);
         playerManager.add(you);
 
