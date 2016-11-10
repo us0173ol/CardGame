@@ -3,10 +3,12 @@ package com.miked;
 /**
  * Created by miked on 11/8/2016.
  */
-public class Player {
+public abstract class Player {
 
     String name;
     Hand handOfCARDS;
+
+    Card cardPlayedThisRound;
 
 
     Player(String name){
@@ -29,4 +31,6 @@ public class Player {
     public void setHandOfCARDS(Hand handOfCARDS) {
         this.handOfCARDS = handOfCARDS;
     }
+
+    public abstract void play() ;   //todo override and implement this in HumanPlayer and ComputerPlayer
 }

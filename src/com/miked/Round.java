@@ -26,7 +26,25 @@ public class Round {
             hand.addCard(deck.deal());
             hand.addCard(deck.deal());
             p.setHandOfCARDS(hand);
+
         }
+
+        //now play game here
+
+        for (Player p : playerManager.getPlayersList()) {
+
+            p.play();
+
+        }
+
+        //figure out winner
+
+        Player winner = playerManager.findWinner();
+
+        System.out.println("the winner is " + winner);
+
+
+
     }
 
 
