@@ -1,5 +1,7 @@
 package com.miked;
 
+import java.util.ArrayList;
+
 /**
  * Created by miked on 11/9/2016.
  */
@@ -9,6 +11,7 @@ public class Round {
     PlayerManager playerManager;
 
     Round(PlayerManager playerManager){
+
 
         deck = new Deck();
 
@@ -30,10 +33,11 @@ public class Round {
         }
 
         //now play game here
-
+        ArrayList<Card> firstTrick = new ArrayList<>();
         for (Player p : playerManager.getPlayersList()) {
 
             p.play();
+
 
         }
 

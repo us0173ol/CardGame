@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class PlayerManager {
 
     ArrayList<Player> players;
+    ArrayList<Card> cardsPlayedThisRound;
+
+    Deck deck = new Deck();
 
     public final int MAX_PLAYERS = 5;
 
@@ -22,7 +25,27 @@ public class PlayerManager {
     }
     public PlayerManager(){
         this.players = new ArrayList<Player>();
+        this.cardsPlayedThisRound = new ArrayList<>();
 
+    }
+
+    public void oneTrick(){
+        players.get(0).setPlayerOne(true);
+
+        for (Player p : players){
+            if (p.isPlayerOne && p instanceof HumanPlayer){
+                Card playedCard = p.humanSelectCardToPlay();
+                playedCard.setAlpha(true);
+                cardsPlayedThisRound.add(playedCard);
+            }
+            if (!p.isPlayerOne && p instanceof HumanPlayer){
+                System.out.println("Player one played: " + cardsPlayedThisRound.get(0)+ "\n");
+                Card playedCard = p.humanSelectCardToPlay();
+                cardsPlayedThisRound.add(playedCard);
+            }else{
+                System.out.println("Computers turn...");
+            }
+        }
     }
 
     public void add(Player player){
@@ -37,9 +60,21 @@ public class PlayerManager {
         return players;
     }
 
+    public void dealHands(){
+        for (int i = 0; i < 6; i++){
+            for(Player p : players){
+                Card dealtCard = deck.deal();
+                p.handOfCARDS.addCard(dealtCard);
+            }
+        }
+    }
+
     public Player findWinner() {
 
         //todo you have a list of players, you can get the cardPlayedThisRound variable, so you can figure out who won.
         return null; //replace with return statement to return the winner
+    }
+    public void printFinalWins(){
+        System.out.println("TODO printFinalWins");
     }
 }

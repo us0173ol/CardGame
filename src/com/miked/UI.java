@@ -21,6 +21,16 @@ public class UI {
         output(prompt);
         return stringScanner.nextLine();
     }
+    public void numOutput(String output){
+        System.out.println(output);
+    }
+    public int numInput(){
+        return numberScanner.nextInt();
+    }
+    public int numInput(String prompt){
+        numOutput(prompt);
+        return numberScanner.nextInt();
+    }
 
     public static void close(){
         numberScanner.close();

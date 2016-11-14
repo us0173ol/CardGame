@@ -7,6 +7,7 @@ public class Card {
 
     String suit;
     int value;
+    boolean alpha = false;
 
     public enum Suit{
         CLUBS("Clubs"),HEARTS("Hearts"),DIAMONDS("Diamonds"),SPADES("Spades");
@@ -15,6 +16,9 @@ public class Card {
             this.value = value;
         }
     }
+    public boolean isAlpha(){ return alpha; }
+
+    public void setAlpha(boolean alpha){ this.alpha = alpha; }
 
     public String getSuit() {
         return suit;
@@ -44,6 +48,23 @@ public class Card {
         }
         return this.value + " of " + this.suit;
     }
+
+    @Override
+    public boolean equals(Object other){
+
+        Card anotherCard;
+
+        try{
+            anotherCard = (Card) other;
+        }catch (ClassCastException cce){
+            return false;
+        }
+
+        if(this.value == anotherCard.value &&
+                this.suit.equals(anotherCard.suit));
+        return true;
+    }
+
     //// TODO: 11/8/2016 maybe add a boolean equals to compare cards
 }
 

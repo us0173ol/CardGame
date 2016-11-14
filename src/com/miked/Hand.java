@@ -21,8 +21,23 @@ public class Hand {
             System.out.println("Only six cards per hand");
         }
     }
-    public void playCard(Hand hand){
+    public Card playCard(int cardNumber){
+        return handOfCards.remove(cardNumber -1);
 
+//        for(int i = 0; i<handOfCards.size(); i++){
+//            System.out.println(i + ") " + handOfCards.get(i));
+//
+//        }
+//        System.out.println("Please choose a card to play.");
+//        String choice = MainGame.ui.input();
+//        int chosen = (Integer.parseInt(choice));
+//        Card played = handOfCards.remove(chosen);
+//
+//        return played;
+    }
+
+    public ArrayList<Card> getHandOfCards(){
+        return handOfCards;
     }
 
     public int size(){
@@ -35,5 +50,12 @@ public class Hand {
             cards = cards + c.toString() + " ";
         }
         return cards;
+    }
+
+    public void displayHand(){
+        System.out.println("***** Your Hand *****");
+        for(int i = 0; i < handOfCards.size(); i++){
+            System.out.println(handOfCards.get(i)+"\n");
+        }
     }
 }
