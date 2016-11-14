@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class PlayerManager {
 
+
     ArrayList<Player> players;
     ArrayList<Card> cardsPlayedThisRound;
 
