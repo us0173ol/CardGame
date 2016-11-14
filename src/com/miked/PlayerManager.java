@@ -47,6 +47,36 @@ public class PlayerManager {
                 System.out.println("Computers turn...");
             }
         }
+
+        //figure out who won this trick
+
+        figureOutWinner();
+
+        rearrangePlayers();
+
+
+    }
+
+    int winningPlayerIndex = 0;
+
+    private void rearrangePlayers() {
+
+        //move whoever won to the start of the Player players arraylist
+
+        Player winner = players.remove(winningPlayerIndex);
+        players.add(0, winner);
+
+    }
+
+    private void figureOutWinner() {
+
+        //what was suit of first card in cardsPlayedThisRound
+        //what is the card with the highest value of that suit - what position is it in the cardsPlayedThisRound arraylist?
+        //if (e.g.) card 2 in the cardsPlayedThisRound is the winner,
+        //then player at element 2 in the players ArrayList is the winner
+
+        winningPlayerIndex = 3;  //figure this out
+
     }
 
     public void add(Player player){
