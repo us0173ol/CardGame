@@ -55,7 +55,7 @@ public class Hand {
     public void displayHand(){
         System.out.println("***** Your Hand *****");
         for(int i = 0; i < handOfCards.size(); i++){
-            System.out.println(handOfCards.get(i)+"\n");
+            System.out.println((i+1)+") " +handOfCards.get(i)+"\n");
         }
     }
 }

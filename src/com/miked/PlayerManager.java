@@ -40,7 +40,7 @@ public class PlayerManager {
                 cardsPlayedThisRound.add(playedCard);
             }
             if (!p.isPlayerOne && p instanceof HumanPlayer){
-                System.out.println("Player one played: " + cardsPlayedThisRound.get(0)+ "\n");
+                System.out.println(p.getName() + " played: " + cardsPlayedThisRound.get(0)+ "\n");
                 Card playedCard = p.humanSelectCardToPlay();
                 cardsPlayedThisRound.add(playedCard);
             }else{
