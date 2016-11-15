@@ -1,14 +1,17 @@
 package com.miked;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
+
+import static com.miked.Card.Suit.SPADES;
 
 /**
  * Created by miked on 11/8/2016.
  */
 public class Deck {
 
-    private ArrayList<Card> cards;
+    public ArrayList<Card> cards;
 
     protected Random rng;
 
@@ -30,7 +33,12 @@ public class Deck {
             }
 
         }
+        cards.remove(35);
+        //showDeck();
+        Collections.shuffle(cards);
+        //showDeck();
     }
+
 
     public int cardsLeft(){
         return cards.size();

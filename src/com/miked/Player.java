@@ -7,10 +7,29 @@ public abstract class Player {
 
     String name;
     Hand handOfCARDS;
-
+    int wins = 0;
+    int currentScore = 0;
     boolean isPlayerOne = false;
 
     Card cardPlayedThisRound;
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public int getCurrentScore() {
+        return currentScore;
+    }
+
+    public void setCurrentScore(int currentScore) {
+        this.currentScore = currentScore;
+    }
+
+
 
 
     Player(String name){
@@ -18,6 +37,7 @@ public abstract class Player {
         handOfCARDS = new Hand();
 
     }
+
 
     public Card getCardPlayedThisRound() {
         return cardPlayedThisRound;
@@ -54,6 +74,7 @@ public abstract class Player {
         int userChoice = MainGame.ui.numInput(prompt);
         Card selectedCard = handOfCARDS.playCard(userChoice);
         return selectedCard;
+        //todo needs input validation
     }
     @Override
     public String toString(){

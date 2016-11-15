@@ -55,14 +55,15 @@ public class MainGame {
 
             playerManager.dealHands();
 //            round.play();
+
             Collections.shuffle(playerManager.players);
             while (current_trick < 6){
-                System.out.println("Trick Number");
-                playerManager.oneTrick();
+                System.out.println("Trick Number " + (current_trick +1));
+                playerManager.oneTrick(current_trick);
                 current_trick++;
                 playerManager.findWinner();
             }
-
+            playerManager.printFinalWins();
             anotherRound = ui.input("Play again? n to quit, anything else to continue... ");
 
             playAgain = !anotherRound.equals("n");
@@ -73,7 +74,7 @@ public class MainGame {
 
 
         }
-        playerManager.printFinalWins();
+
 
     }
 
