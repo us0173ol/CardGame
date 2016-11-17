@@ -7,7 +7,7 @@ public class Card {
 
     String suit;
     int value;
-    boolean alpha = false;
+    boolean alpha = false;//alpha is the cards suit for each trick
 
     public enum Suit{
         CLUBS("Clubs"),HEARTS("Hearts"),DIAMONDS("Diamonds"),SPADES("Spades");
@@ -41,7 +41,7 @@ public class Card {
         this.value = v;
 
     }
-
+    //displays aces as "Ace" instead of 11
     public String toString(){
         if(this.value == 11){
             return "Ace of " + this.suit;
@@ -64,7 +64,5 @@ public class Card {
                 this.suit.equals(anotherCard.suit));
         return true;
     }
-
-    //// TODO: 11/8/2016 maybe add a boolean equals to compare cards
 }
 

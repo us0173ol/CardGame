@@ -1,12 +1,13 @@
 package com.miked;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  * Created by miked on 11/8/2016.
  */
 public class UI {
-
+    //scanners for scanning
     static Scanner stringScanner = new Scanner(System.in);
     static Scanner numberScanner = new Scanner(System.in);
 
@@ -27,11 +28,21 @@ public class UI {
     public int numInput(){
         return numberScanner.nextInt();
     }
+    /*numImput method that validates for entering a number
+    * helps to keep the program running if the user enters a
+    * letter where a number is expected*/
     public int numInput(String prompt){
-        numOutput(prompt);
-        return numberScanner.nextInt();
+        while (true) {
+            numOutput(prompt);
+            try {
+                return numberScanner.nextInt();
+            }catch (InputMismatchException ime){
+                System.out.println("Enter a valid number");
+                numberScanner.next();
+            }
+        }
     }
-
+    //close the scanners
     public static void close(){
         numberScanner.close();
         stringScanner.close();

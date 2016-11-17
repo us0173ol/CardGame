@@ -38,17 +38,6 @@ public class Hand {
     }
     public Card playCard(int cardNumber){
         return handOfCards.remove(cardNumber -1);
-
-//        for(int i = 0; i<handOfCards.size(); i++){
-//            System.out.println(i + ") " + handOfCards.get(i));
-//
-//        }
-//        System.out.println("Please choose a card to play.");
-//        String choice = MainGame.ui.input();
-//        int chosen = (Integer.parseInt(choice));
-//        Card played = handOfCards.remove(chosen);
-//
-//        return played;
     }
 
     public ArrayList<Card> getHandOfCards(){
